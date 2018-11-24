@@ -1,8 +1,8 @@
-const BannerLanding = (props) => (
+const BannerWelcome = (props) => (
     <section id="banner" className="style2">
         <div className="inner">
             <header className="major">
-                <h1>Landing to Bitcoin Bay</h1>
+                <h1>Welcome to Bitcoin Bay</h1>
             </header>
             <div className="content">
                 <p>We discuss all things Bitcoin (blockchains, cryptocurrencies, networks)</p>
@@ -14,4 +14,4 @@ const BannerLanding = (props) => (
     </section>
 )
 
-export default BannerLanding
+export default BannerWelcome

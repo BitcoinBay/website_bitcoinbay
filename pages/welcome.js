@@ -2,17 +2,17 @@ import Head from "next/head"
 import Link from 'next/link'
 
 import Layout from '../components/Layout'
-import BannerLanding from '../components/BannerLanding'
+import BannerWelcome from '../components/BannerWelcome'
 
 export default () => (
     <Layout>
         <Head>
-            <title>Landing Page</title>
-            <meta name="description" content="Landing Page" />
+            <title>Bitcoin Bay</title>
+            <meta name="description" content="Welcome Page" />
         </Head>
 
         <div>
-            <BannerLanding />
+            <BannerWelcome />
 
             <div id="main">
                 <section id="CoreMission">
@@ -54,7 +54,7 @@ export default () => (
                 </section>
                 <section id="three" className="spotlights">
                     <section>
-                        <Link href="/blockhack">
+                        <Link href="/team">
                             <a className="image"><img src="/static/images/pic08.jpg" alt="" /></a>
                         </Link>
                         <div className="content">
@@ -71,7 +71,7 @@ export default () => (
                         </div>
                     </section>
                     <section>
-                        <Link href="/blockhack">
+                        <Link href="/team">
                             <a className="image"><img src="/static/images/pic09.jpg" alt="" /></a>
                         </Link>
                         <div className="content">

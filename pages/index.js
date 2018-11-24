@@ -13,9 +13,9 @@ export default () => (
                     <article style={{backgroundImage: `url('/static/images/pic01.jpg')`}}>
                         <header className="major">
                             <h3>Bitcoin Bay</h3>
-                            <p>Landing Page</p>
+                            <p>Welcome Page</p>
                         </header>
-                        <Link href="/landing"><a className="link primary"></a></Link>
+                        <Link href="/welcome"><a className="link primary"></a></Link>
                     </article>
                     <article style={{backgroundImage: `url('/static/images/pic02.jpg')`}}>
                         <header className="major">
@@ -43,14 +43,14 @@ export default () => (
                             <h3>Bitcoin Bay Workshops</h3>
                             <p>Blockchain Technology, Business, Infrastructure</p>
                         </header>
-                        <Link href="/landing"><a className="link primary"></a></Link>
+                        <Link href="/welcome"><a className="link primary"></a></Link>
                     </article>
                     <article style={{backgroundImage: `url('/static/images/pic06.jpg')`}}>
                         <header className="major">
                             <h3>Blockchain Development</h3>
                             <p>Our Blockchain Technical Team</p>
                         </header>
-                        <Link href="/landing"><a className="link primary"></a></Link>
+                        <Link href="/welcome"><a className="link primary"></a></Link>
                     </article>
                 </section>
                 <section id="meetup">
