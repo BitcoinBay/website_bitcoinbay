@@ -35,9 +35,9 @@ module.exports = {
   // exportPathMap: function(defaultPathMap) {
   //   return {
   //     '/': { page: '/' },
-  //     '/landing': { page: '/landing' },
+  //     '/Landing': { page: '/Landing' },
   //     '/generic': { page: '/generic' },
-  //     '/landing': { page: '/landing' }
+  //     '/Landing': { page: '/Landing' }
   //   }
   // }
 }
