@@ -9,6 +9,7 @@ const Menu = (props) => (
                 <li><Link href="/welcome"><a><span onClick={props.onToggleMenu}>Bitcoin Bay</span></a></Link></li>
                 <li><Link href="/blockhack"><a><span onClick={props.onToggleMenu}>Blockhack</span></a></Link></li>
                 <li><Link href="/team"><a><span onClick={props.onToggleMenu}>Team Members</span></a></Link></li>
+                <li><Link href="/wallettools"><a><span onClick={props.onToggleMenu}>Wallet Tools</span></a></Link></li>
                 <li><Link href="/elements"><a><span onClick={props.onToggleMenu}>Elements</span></a></Link></li>
             </ul>
             <ul className="actions vertical">
