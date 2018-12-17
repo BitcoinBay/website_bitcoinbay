@@ -11,7 +11,7 @@ To get started, simply clone the repository and run `npm install`
 
 ```
 # Clone the repo
-git clone https://github.com/lightswarm124/website_bitcoinbay.git
+git clone https://github.com/BitcoinBay/website_bitcoinbay.git
 
 # Move into the new directory
 cd website_bitcoinbay/
