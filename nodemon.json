@@ -1,6 +1,17 @@
 {
-    "verbose": true,
-    "ignore": ["node_modules", ".next"],
-    "watch": ["server/**/*"],
-    "ext": "js json"
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "watch": [
+    "server/*",
+    "pages/*",
+    "components/*"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json"
 }

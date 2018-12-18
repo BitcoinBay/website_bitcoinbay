@@ -2,6 +2,7 @@ const express = require('express')
 const morgan = require('morgan');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const next = require('next')
 
 const wrap = require('./middlewares/wrap');
@@ -19,6 +20,7 @@ nextApp.prepare().then(() => {
     app.use(bodyParser.json());
     app.use(morgan('dev'));
     app.use(helmet());
+    app.use(cors())
     app.use('/api/v1', api)
     app.get('*', (req, res) => {
         return handle(req, res)
