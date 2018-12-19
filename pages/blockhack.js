@@ -1,7 +1,6 @@
 import Head from "next/head"
 
 import Layout from '../components/Layout'
-import BCHButton from '../components/BCHButton'
 
 export default () => (
     <Layout>
@@ -9,14 +8,13 @@ export default () => (
             <title>Blockhack</title>
             <meta name="description" content="Generic Page" />
         </Head>
-        
+
         <div id="main" className="alt">
             <section id="one">
                 <div className="inner">
                     <header className="major">
                         <h1>Blockhack</h1>
                         <p>by Bitcoin Bay</p>
-                        <BCHButton />
                     </header>
                     <span className="image main"><img src="/static/images/blockhack.jpg" alt="" /></span>
                     <p>The world is ready for the next killer app powered by Blockchain technology, and it will need companies and plans to make it grow</p>

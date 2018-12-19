@@ -18,25 +18,29 @@ export default class BCHButton extends React.Component {
     }
 
     handleClick = async() => {
-        let response = await axios(`/api/v1/bch/${this.state.searchValue}`)
-            .then(result => {
-                response = result.data;
-                return response;
-            })
-            .catch(err => {
-                console.log(err);
-                return;
-            })
-        await console.log(response.data);
-        await this.setState({
-            address: response.data.cashAddress,
-            legacyAddress: response.data.legacyAddress,
-            balance: response.data.balance,
-            totalReceived: response.data.totalReceived,
-            totalSent: response.data.totalSent,
-            txAppearances: response.data.txAppearances
-
-        });
+        try {
+            let response = await axios(`/api/v1/bch/${this.state.searchValue}`)
+                .then(result => {
+                    response = result.data;
+                    return response;
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+            await console.log(response.data);
+            await this.setState({
+                address: response.data.cashAddress,
+                legacyAddress: response.data.legacyAddress,
+                balance: response.data.balance,
+                totalReceived: response.data.totalReceived,
+                totalSent: response.data.totalSent,
+                // They mis-spelt "txApperance" instead of "txAppearance"
+                txAppearances: response.data.txApperances
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
     }
 
     handleChange(event) {

@@ -10,6 +10,7 @@ const Menu = (props) => (
                 <li><Link href="/blockhack"><a><span onClick={props.onToggleMenu}>Blockhack</span></a></Link></li>
                 <li><Link href="/team"><a><span onClick={props.onToggleMenu}>Team Members</span></a></Link></li>
                 <li><Link href="/elements"><a><span onClick={props.onToggleMenu}>Elements</span></a></Link></li>
+                <li><Link href="/tools"><a><span onClick={props.onToggleMenu}>Tools</span></a></Link></li>
             </ul>
             <ul className="actions vertical">
                 <li><a href="#" className="button special fit">Get Started</a></li>
