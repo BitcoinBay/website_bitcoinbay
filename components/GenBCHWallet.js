@@ -30,11 +30,11 @@ export default class GenBCHWallet extends React.Component {
             mnemonic = this.state.searchValue
         }
         const rootSeed = BITBOX.Mnemonic.toSeed(mnemonic);
-        const masterHDNode = BITBOX.HDNode.fromSeed(rootSeed, "bitcoincash");
+        const masterHDNode = BITBOX.HDNode.fromSeed(rootSeed, "testnet");
         const xpubKey = BITBOX.HDNode.toXPub(masterHDNode);
 
         const purpose = "44'";
-        const coin = "145'";
+        const coin = "1'";
         const path = `m/${purpose}/${coin}/0'`
 
         let index = 0

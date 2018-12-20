@@ -19,7 +19,7 @@ export default class BCHButton extends React.Component {
 
     handleClick = async() => {
         try {
-            let response = await axios(`/api/v1/bch/${this.state.searchValue}`)
+            let response = await axios(`/api/v1/tbch/${this.state.searchValue}`)
                 .then(result => {
                     return result.data;
                 })
