@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Route from 'react-router';
-import './Meetup.css';
+import '../styles/Meetup.css'
 
 class Meetup extends Component {
 
@@ -26,17 +26,11 @@ class Meetup extends Component {
     }
 
 
-    linkToMeetup = async () => {
-        // <link></link> 
-
-        <a href='https://www.meetup.com/The-Bitcoin-Bay'>Jerry Is a Pussy</a>
-    }
 
     mapEvents = () => {
         return this.state.events.map((event) => {
             console.log(event)
             return (
-                // <div className="meetup-container" key={event.id} onClick={this.linkToMeetup}>
                 <a href={`https://www.meetup.com/The-Bitcoin-Bay/events/${event.id}`} className="meetup-container" key={event.id}>
                     <h4>Next Meetup:</h4>
                     <div className="time">

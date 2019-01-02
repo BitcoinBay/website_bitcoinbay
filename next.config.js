@@ -1,7 +1,9 @@
 const path = require('path')
 const glob = require('glob')
 const withCSS = require('@zeit/next-css')
-module.exports = {
+
+
+module.exports = withCSS({
   webpack: (config, { dev }) => {
     config.module.rules.push(
       {
@@ -40,6 +42,5 @@ module.exports = {
   //     '/Landing': { page: '/Landing' }
   //   }
   // }
-}
+})
 
-module.exports = withCSS()
