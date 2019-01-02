@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import Route from 'react-router';
+import './Meetup.css';
 
 class Meetup extends Component {
 
@@ -9,41 +11,54 @@ class Meetup extends Component {
         events: []
     }
 
-
     componentDidMount() {
-
-        var express = require('express')
-        var cors = require('cors')
-        var app = express()
-         
-        app.use(cors())
-         
-        app.get('/products/:id', function (req, res, next) {
-          res.json({msg: 'This is CORS-enabled for all origins!'})
-        })
-         
-        app.listen(80, function () {
-          console.log('CORS-enabled web server listening on port 80')
-        })
-
         this.getBitcoinBayEvents();
     }
 
     getBitcoinBayEvents = async () => {
         const bitcoinBay = 'The-Bitcoin-Bay'
-        const req = await fetch (`https://api.meetup.com/${bitcoinBay}/events?&sign=true&photo-host=public&page=5`)
+        const req = await fetch(`https://api.meetup.com/${bitcoinBay}/events?&sign=true&photo-host=public&page=5`)
         const data = await req.json();
+        console.log(data);
         this.setState({
             events: data
         })
-        console.log(data);
     }
 
 
+    linkToMeetup = async () => {
+        // <link></link> 
+
+        <a href='https://www.meetup.com/The-Bitcoin-Bay'>Jerry Is a Pussy</a>
+    }
+
+    mapEvents = () => {
+        return this.state.events.map((event) => {
+            console.log(event)
+            return (
+                // <div className="meetup-container" key={event.id} onClick={this.linkToMeetup}>
+                <a href={`https://www.meetup.com/The-Bitcoin-Bay/events/${event.id}`} className="meetup-container" key={event.id}>
+                    <h4>Next Meetup:</h4>
+                    <div className="time">
+                        {event.local_date}
+                        <br />
+                        {event.local_time}
+                    </div>
+                    {event.name}
+                    {event.venue.address_1}
+                    {event.venue.name}
+                    <div>
+                        <p>{event.yes_rsvp_count} people are coming!</p>
+                    </div>
+                </a>
+            )
+        })
+    }
+
     render() {
         return (
-            <div>
-                <p>{this.state.events}</p>
+            <div className="background">
+                {this.mapEvents()}
                 {this.props.children}
             </div>
         )

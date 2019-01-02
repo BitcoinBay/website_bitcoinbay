@@ -1,6 +1,6 @@
 const path = require('path')
 const glob = require('glob')
-
+const withCSS = require('@zeit/next-css')
 module.exports = {
   webpack: (config, { dev }) => {
     config.module.rules.push(
@@ -41,3 +41,5 @@ module.exports = {
   //   }
   // }
 }
+
+module.exports = withCSS()
