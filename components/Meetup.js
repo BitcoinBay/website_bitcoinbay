@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Route from 'react-router';
-import './Meetup.css';
+import '../styles/Meetup.css';
 
 class Meetup extends Component {
 
@@ -27,7 +27,7 @@ class Meetup extends Component {
 
 
     linkToMeetup = async () => {
-        // <link></link> 
+        // <link></link>
 
         <a href='https://www.meetup.com/The-Bitcoin-Bay'>Jerry Is a Pussy</a>
     }
