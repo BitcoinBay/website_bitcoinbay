@@ -1,0 +1,32 @@
+
+
+.meetup-container{
+    background-clip: padding-box;
+    background-color: #b06565;
+    border: 3px solid rgba(0,0,0,.12);
+    border-radius: 3px;
+    display: block;
+    list-style: none;
+    margin: 0 0 26px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 16px
+}
+
+.time{
+    padding-left: 0;
+}
+
+/* .{
+    stroke: transparent;
+    fill: rgba(0,0,0,.87);
+    color: rgba(0,0,0,.87);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: -.02em;
+    word-spacing: .1em;
+} */
+
+
+
