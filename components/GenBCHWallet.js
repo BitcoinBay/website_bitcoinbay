@@ -9,14 +9,17 @@ export default class GenBCHWallet extends React.Component {
         this.state = {
             searchValue: "",
             mnemonic: "",
-            xpubKey: "",
-            address: "0x00"
+            address: "0x00",
+            change: "0x00",
+            data: "0x00"
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleClick = async() => {
+        const purpose = "44'";
+        const coin = "1'";
         let mnemonic;
         if (!this.state.searchValue) {
             const lang = "english";
@@ -31,20 +34,22 @@ export default class GenBCHWallet extends React.Component {
         }
         const rootSeed = BITBOX.Mnemonic.toSeed(mnemonic);
         const masterHDNode = BITBOX.HDNode.fromSeed(rootSeed, "testnet");
-        const xpubKey = BITBOX.HDNode.toXPub(masterHDNode);
 
-        const purpose = "44'";
-        const coin = "1'";
-        const path = `m/${purpose}/${coin}/0'`
+        let account1 = BITBOX.HDNode.derivePath(masterHDNode, `m/${purpose}/${coin}/0'`);
+        let addressStruct = BITBOX.HDNode.derivePath(account1, "0/0");
+        let changeStruct = BITBOX.HDNode.derivePath(account1, "1/0");
+        let dataStruct = BITBOX.HDNode.derivePath(account1, "2/0");
 
-        let index = 0
-        let addressOne = BITBOX.Address.fromXPub(xpubKey, `0/${index}`);
+        let address1 = BITBOX.HDNode.toCashAddress(addressStruct);
+        let change1 = BITBOX.HDNode.toCashAddress(changeStruct);
+        let data1 = BITBOX.HDNode.toCashAddress(dataStruct);
 
         this.setState({
             mnemonic: mnemonic,
-            xpubKey: xpubKey,
-            address: addressOne
-        })
+            address: address1,
+            change: change1,
+            data: data1,
+        });
 
     }
 
@@ -58,12 +63,13 @@ export default class GenBCHWallet extends React.Component {
         return (
             <ul className="actions small">
                 <div className="6u 12u(xsmall)">
-                    <input type="text" value={this.state.searchValue} placeholder="Address" onChange={this.handleChange} />
+                    <input type="text" value={this.state.searchValue} placeholder="Enter Mnemonic" onChange={this.handleChange} />
                 </div>
-                <li><a href="#" className="button special small" onClick={this.handleClick}>Generate Address</a></li><br />
-                Mnemonic            {this.state.mnemonic} <br />
-                Extended Public Key {this.state.xpubKey} <br />
-                First Address Index {this.state.address} <br />
+                <a href="#" className="button special small" onClick={this.handleClick}>Generate Addresses</a><br />
+                Mnemonic          {this.state.mnemonic} <br />
+                "m/44'/1'/0'/0/0" {this.state.address} <br />
+                "m/44'/1'/0'/1/0" {this.state.change} <br />
+                "m/44'/1'/0'/2/0" {this.state.data} <br />
             </ul>
         );
     }
