@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // import Route from 'react-router';
-import '../styles/Meetup.css'
 
 class Meetup extends Component {
 
